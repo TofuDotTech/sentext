@@ -5,3 +5,8 @@ python-dotenv
 pandas
 numpy
 openai
+tensorflow
+scikit-learn
+joblib
+nltk
+spacy

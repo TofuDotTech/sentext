@@ -1,6 +1,7 @@
 from flask import Flask, request
 from flask_cors import CORS
 import uuid
+from api.model import overall_emotion, overall_sentiment
 
 from genAi import genDescription
 
@@ -14,7 +15,9 @@ def predictEmotion():
     if (json == None):
         return {"success": False}
     result = genDescription(json['platform'], json['comments'])
-    return {"message": result}
+    sentiment = overall_sentiment(json['comments'])
+    emotion = overall_emotion(json['comments'])
+    return {"message": result, 'sentiment': sentiment, 'emotion': emotion}, 200
 
 
 if __name__ == "__main__":
