@@ -1,7 +1,7 @@
 from flask import Flask, request
 from flask_cors import CORS
 import uuid
-from api.model import overall_emotion, overall_sentiment
+from model import overall_emotion, overall_sentiment
 
 from genAi import genDescription
 
