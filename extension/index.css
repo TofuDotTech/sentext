@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(240, 235, 255);
+  background-color: rgb(0, 0, 0);
   font-family: "Nunito", sans-serif;
 }
 
@@ -10,7 +10,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 8px;
+  padding: 8px 16px;
 }
 
 .title-description {
@@ -19,7 +19,7 @@ body {
 }
 
 .title {
-  color: rgb(100, 57, 255);
+  color: rgb(240, 240, 240);
   font-size: 28px;
   font-weight: 700;
   align-self: center;
@@ -29,7 +29,7 @@ body {
 }
 
 .description {
-  color: black;
+  color: rgb(200, 200, 200);
   font-size: 16px;
   text-align: justify;
   margin: 0;
@@ -37,14 +37,15 @@ body {
 }
 
 .main-button {
-  width: 200px;
+  /*width: 250px;*/
+  width: 85%;
   height: 44px;
   border: none;
   font-size: 20px;
-  border-radius: 16px;
+  border-radius: 8px;
   cursor: pointer;
-  background-color: rgba(149, 120, 255, 0.15);
-  border: 1px solid rgb(100, 58, 255);
-  color: rgb(100, 58, 255);
+  background-color: rgba(0, 190, 230, 0.15);
+  border: 1px solid rgb(100, 190, 230);
+  color: rgb(100, 190, 230);
   font-weight: 400;
 }

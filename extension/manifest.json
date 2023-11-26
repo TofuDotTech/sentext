@@ -4,12 +4,22 @@
   "version": "1.0",
   "permissions": ["activeTab"],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "100": "icons/sentext_icon.jpeg"
+    }
+  },
+  "icons": {
+    "100": "icons/sentext_icon.jpeg"
   },
   "content_scripts": [
     {
       "matches": ["https://twitter.com/*"],
-      "js": ["scripts/content_script.js"]
+      "js": ["scripts/x_script.js"]
+    },
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "js": ["scripts/insta_script.js"]
     }
   ]
 }
