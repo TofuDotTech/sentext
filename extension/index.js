@@ -2,9 +2,9 @@ const title = document.querySelector("#title");
 const button = document.querySelector("#main-button");
 const analyze = new CustomEvent("Analyze", { detail: "message" });
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
   if (request.response) {
-    console.log("Mensaje recibido en popup.js:", request.response);
+    console.log("Mensaje recibido en popup.js:", request.data);
   }
 });
 
