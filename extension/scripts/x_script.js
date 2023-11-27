@@ -11,7 +11,7 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 
     console.log(comments);
 
-    /* const response = await fetch("http://127.0.0.1:5000/api/emotions", {
+    const response = await fetch("http://127.0.0.1:5000/api/emotions", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -29,9 +29,9 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
       chrome.runtime.sendMessage({
         data: data,
       });
-    }); */
+    });
 
-    setTimeout(() => {
+    /* setTimeout(() => {
       chrome.runtime.sendMessage({
         data: {
           message:
@@ -40,6 +40,6 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
           emotion: "happiness",
         },
       });
-    }, 2000);
+    }, 2000); */
   }
 });

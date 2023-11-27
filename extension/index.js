@@ -105,7 +105,7 @@ askButton.addEventListener("click", async () => {
     summary.style.color = "transparent";
     summary.classList.add("loading-text-2");
 
-    /* const response = await fetch("http://127.0.0.1:5000/api/query", {
+    const response = await fetch("http://127.0.0.1:5000/api/query", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -118,14 +118,23 @@ askButton.addEventListener("click", async () => {
 
     response.json().then((data) => {
       console.log(data);
+      summary.classList.remove("loading-text-2");
+      summary.classList.add("hidden");
+
+      const queryItem = document.createElement("li");
+      queryItem.textContent = `Prompt: ${query}`;
+      queryItem.classList.add("query");
+      list.appendChild(queryItem);
 
       const answerItem = document.createElement("li");
       answerItem.textContent = `Answer: ${data.answer}`;
       answerItem.classList.add("answer");
       list.appendChild(answerItem);
-    }); */
+    });
 
-    setTimeout(() => {
+    lastQuery = chatPrompt.value;
+
+    /* setTimeout(() => {
       const queryItem = document.createElement("li");
       queryItem.textContent = `Prompt: ${query}`;
       queryItem.classList.add("query");
@@ -135,6 +144,6 @@ askButton.addEventListener("click", async () => {
       summary.classList.add("hidden");
 
       lastQuery = chatPrompt.value;
-    }, 2000);
+    }, 2000); */
   }
 });
