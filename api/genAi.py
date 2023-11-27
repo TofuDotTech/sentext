@@ -2,7 +2,6 @@ from operator import itemgetter
 from langchain.chat_models import ChatOpenAI
 from dotenv import load_dotenv
 from langchain.schema import StrOutputParser
-from langchain.schema.messages import HumanMessage
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.runnable import RunnableLambda
 load_dotenv()
