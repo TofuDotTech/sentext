@@ -25,8 +25,6 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 
     response.json().then((data) => {
       console.log(data);
-      console.log();
-      console.log(JSON.stringify(data));
 
       chrome.runtime.sendMessage({
         data: data,
