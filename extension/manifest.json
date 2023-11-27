@@ -6,20 +6,16 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "100": "icons/sentext_icon.jpeg"
+      "100": "icons/sentext_icon.png"
     }
   },
   "icons": {
-    "100": "icons/sentext_icon.jpeg"
+    "100": "icons/sentext_icon.png"
   },
   "content_scripts": [
     {
       "matches": ["https://twitter.com/*"],
       "js": ["scripts/x_script.js"]
-    },
-    {
-      "matches": ["https://www.instagram.com/*"],
-      "js": ["scripts/insta_script.js"]
     }
   ]
 }

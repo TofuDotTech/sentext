@@ -3,9 +3,157 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
-.content {
+.response-header {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.hand-circle-neutral {
+  background-color: #b9c0cb;
+  transform: rotate(300deg);
+}
+
+.hand-circle-positive {
+  background-color: #aebdad;
+}
+
+.hand-circle-negative {
+  background-color: #cbb9be;
+  transform: rotate(180deg);
+}
+
+.hand-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hand-img-neutral {
+  fill: rgba(69, 100, 110, 0.71);
+}
+
+.hand-img-positive {
+  fill: rgba(57, 85, 55);
+}
+
+.hand-img-negative {
+  fill: rgba(110, 69, 80, 0.77);
+}
+
+.sentiment-neutral {
+  color: #45646e;
+}
+
+.sentiment-positive {
+  color: #395537;
+}
+
+.sentiment-negative {
+  color: #6e4550;
+}
+
+.sentiment {
+  width: 85%;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40px;
+  gap: 12px;
+}
+
+.chat-prompt-neutral::placeholder {
+  color: rgba(69, 100, 110, 0.63);
+}
+
+.chat-prompt-neutral {
+  background-color: #45646e47;
+  color: rgb(30, 30, 30);
+}
+
+.chat-prompt-positive::placeholder {
+  color: rgba(57, 85, 55, 0.58);
+}
+
+.chat-prompt-positive {
+  background-color: #39553747;
+  color: rgb(30, 30, 30);
+}
+
+.chat-prompt-negative::placeholder {
+  color: rgba(110, 69, 80, 0.47);
+}
+
+.chat-prompt-negative {
+  background-color: #6e455047;
+  color: rgb(30, 30, 30);
+}
+
+input:focus {
+  outline: none;
+}
+
+.chat-prompt {
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 16px;
+}
+
+.ask-neutral {
+  background-color: #45646e;
+}
+
+.ask-positive {
+  background-color: #395537;
+}
+
+.ask-negative {
+  background-color: #6e4550;
+}
+
+.ask-button {
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: medium;
+  height: 100%px;
+  width: 112px;
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.content-size-normal {
   width: 340px;
-  height: 180px;
+  height: 200px;
+}
+
+.content-size-big {
+  width: 440px;
+  height: 440px;
+}
+
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,13 +166,12 @@ body {
   flex-direction: column;
 }
 
-.title {
-  color: rgb(240, 240, 240);
-  font-size: 28px;
-  font-weight: 700;
+.title-img {
+  width: 150px;
   align-self: center;
   margin: 0;
   padding: 0;
+  margin-left: -20px;
   margin-bottom: 6px;
 }
 
@@ -37,15 +184,84 @@ body {
 }
 
 .main-button {
-  /*width: 250px;*/
-  width: 85%;
+  width: 100%;
   height: 44px;
   border: none;
   font-size: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  background-color: rgba(0, 190, 230, 0.15);
+  background-color: rgba(0, 190, 230, 0.2);
   border: 1px solid rgb(100, 190, 230);
   color: rgb(100, 190, 230);
   font-weight: 400;
+}
+
+.loading-text {
+  color: transparent;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  animation: fadeInOut 1.5s infinite, pulse 1.5s infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+.emotion {
+  color: rgb(30, 30, 30);
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.summary {
+  color: rgb(30, 30, 30);
+  font-size: 16px;
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+}
+
+.summary-content {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+}
+
+.another-content {
+  display: none;
+  flex-direction: column;
+}
+
+/* .response-text {
+  color: rgb(30, 30, 30);
+  font-size: 16px;
+  text-align: justify;
+  margin: 0;
+  margin-bottom: 4px;
+  padding: 0;
+} */
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
