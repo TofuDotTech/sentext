@@ -19,6 +19,10 @@ const anotherContent = document.querySelector("#another-content");
 const analyze = new CustomEvent("Analyze", { detail: "message" });
 let clickable = true;
 
+let lastQuery = "";
+
+const list = document.querySelector("#list");
+
 function modifyExtensionElements(messageText, sentimentText, emotionText) {
   if (sentimentText === "neutral") {
     document.body.style.backgroundColor = "#E8EBF1";
@@ -92,5 +96,45 @@ button.addEventListener("click", () => {
       chrome.tabs.sendMessage(tabs[0].id, { action: "analyze" });
       description.classList.add("loading-text");
     });
+  }
+});
+
+askButton.addEventListener("click", async () => {
+  let query = chatPrompt.value;
+  if (query !== lastQuery) {
+    summary.style.color = "transparent";
+    summary.classList.add("loading-text-2");
+
+    /* const response = await fetch("http://127.0.0.1:5000/api/query", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: query,
+      }),
+    });
+
+    response.json().then((data) => {
+      console.log(data);
+
+      const answerItem = document.createElement("li");
+      answerItem.textContent = `Answer: ${data.answer}`;
+      answerItem.classList.add("answer");
+      list.appendChild(answerItem);
+    }); */
+
+    setTimeout(() => {
+      const queryItem = document.createElement("li");
+      queryItem.textContent = `Prompt: ${query}`;
+      queryItem.classList.add("query");
+      list.appendChild(queryItem);
+
+      summary.classList.remove("loading-text-2");
+      summary.classList.add("hidden");
+
+      lastQuery = chatPrompt.value;
+    }, 2000);
   }
 });
