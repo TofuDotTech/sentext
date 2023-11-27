@@ -22,7 +22,7 @@ async def predictEmotion():
     return {"message": result, 'sentiment': sentiment, 'emotion': emotion}, 200
 
 
-@app.route("api/query", method=["POST"])
+@app.route("/api/query", methods=["POST"])
 def answerQuery():
     json = request.json
     if (json == None):
