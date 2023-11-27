@@ -106,6 +106,7 @@ body {
 
 input:focus {
   outline: none;
+  font-family: "Nunito", sans-serif;
 }
 
 .chat-prompt {
@@ -117,6 +118,7 @@ input:focus {
   padding-left: 12px;
   padding-right: 12px;
   font-size: 16px;
+  font-family: "Nunito", sans-serif;
 }
 
 .ask-neutral {
@@ -210,6 +212,13 @@ input:focus {
   animation: fadeInOut 1.5s infinite, pulse 1.5s infinite;
 }
 
+.loading-ask-button {
+  color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: fadeInOut 1.5s infinite, pulse 1.5s infinite;
+}
+
 .hidden {
   display: none;
 }
@@ -234,7 +243,7 @@ input:focus {
   flex-direction: column;
   width: 100%;
   gap: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .another-content {
@@ -243,6 +252,9 @@ input:focus {
 }
 
 .list {
+  list-style-type: none;
+  max-height: 330px;
+  overflow-y: auto;
   width: 100%;
   font-size: 16px;
   list-style: none;
@@ -261,17 +273,18 @@ input:focus {
   width: 100%;
   margin: 0;
   padding: 0;
+  margin-bottom: 8px;
 }
 
 @keyframes fadeInOut {
   0% {
-    opacity: 0.5;
-  }
-  50% {
     opacity: 1;
   }
-  100% {
+  50% {
     opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -280,7 +293,7 @@ input:focus {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(0.92);
   }
   100% {
     transform: scale(1);

@@ -30,16 +30,5 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
         data: data,
       });
     });
-
-    /* setTimeout(() => {
-      chrome.runtime.sendMessage({
-        data: {
-          message:
-            "This is a test that is going to determine if asdfkjasdf kasdfjk ajdkfjasdfk ajksdfjlk alsdfasdkf jkasdfjkasdf jalsdjflka jkjflaksjdflk jalskdfj kajsdflkj alksjdflkjasd jasjdfkl jaslkdfjlk ajsdkfj lkajsdlkfj aklsdjflk jaslkdfjlk jalkdfjlka jlkdjfa sz",
-          sentiment: "positive",
-          emotion: "happiness",
-        },
-      });
-    }, 2000); */
   }
 });
