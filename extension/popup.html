@@ -13,15 +13,52 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div id="content" class="content">
+    <div id="content" class="content content-size-normal">
+      <div id="another-content" class="another-content">
+        <div id="response-header" class="hidden response-header">
+          <div id="hand-circle" class="hand-circle">
+            <svg
+              width="25"
+              height="28"
+              viewBox="0 0 25 28"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                id="hand-img"
+                class=""
+                d="M21.0911 6.19992C20.5025 3.10897 17.9231 3.9693 17.3774 4.18828C17.3197 4.2117 17.2633 4.23825 17.2085 4.26782L13.8126 6.08738C13.5857 6.20879 13.3353 6.27964 13.0785 6.29509C12.8217 6.31053 12.5646 6.27019 12.3248 6.17685C12.0851 6.0835 11.8684 5.93936 11.6896 5.75432C11.5109 5.56929 11.3743 5.34775 11.2893 5.10492C10.6023 3.13962 8.85984 1.50971 8.85984 1.50971C8.85984 1.50971 8.50059 0.925133 6.41883 0.625627C5.35905 0.472302 4.74994 0.988273 4.41212 1.52986C4.25071 1.79354 4.16172 2.09514 4.15413 2.40421C4.14654 2.71329 4.22063 3.01889 4.36892 3.29017L6.00825 6.34972C6.06748 6.46048 6.09969 6.58368 6.10225 6.70926L6.26567 15.0203C6.2886 15.255 6.35775 15.4828 6.46915 15.6906L10.7134 23.5873C11.1242 24.8161 13.8635 23.8229 14.3822 23.6228C14.4364 23.6014 14.4885 23.5779 14.5405 23.5522L20.5169 20.5309C25.1632 18.3121 24.9125 16.5821 24.1944 15.6572C24.0035 15.4193 23.8761 15.1369 23.8241 14.8364C23.7722 14.5358 23.7973 14.227 23.8973 13.9389C24.2416 12.9982 23.9056 12.228 23.5366 11.7275C23.3779 11.5133 23.2702 11.2656 23.2218 11.0033C23.1734 10.7411 23.1856 10.4713 23.2575 10.2145C23.7376 8.52696 22.8472 7.77759 22.0924 7.45098C21.8363 7.33968 21.6112 7.16755 21.4368 6.94953C21.2623 6.73151 21.1436 6.4742 21.0911 6.19992ZM3.65313 15.5466L0.859262 17.0436C0.275964 17.3562 0.0381863 18.0579 0.329735 18.602L4.88273 27.0994C5.17474 27.6444 5.89022 27.8342 6.47352 27.5217L9.26739 26.0247C9.84984 25.7126 10.0881 25.0118 9.79606 24.4668L5.24307 15.9694C4.95152 15.4253 4.23558 15.2346 3.65313 15.5466Z"
+              />
+            </svg>
+          </div>
+          <p id="sentiment" class="sentiment">Test</p>
+        </div>
+
+        <div id="summary-content" class="summary-content">
+          <p id="emotion" class="emotion"></p>
+          <p id="summary" class="summary"></p>
+        </div>
+      </div>
+
       <div class="title-description">
-        <h1 id="title" class="title">SenText</h1>
+        <img id="title-img" class="title-img" src="icons/sentext_logo.png" />
         <p id="description" class="description">
-          Analyze the sentiment towards a certain post in social media and see a
-          small summary. Just click 'Analyze' and we will do the rest!
+          Analyze the sentiment towards a certain post in X, see a small summary
+          and ask questions about the responses. Just click 'Analyze' and we
+          will do the rest!
         </p>
       </div>
+
       <button id="main-button" class="main-button">Analyze</button>
+
+      <div id="chat-div" class="chat-div hidden">
+        <input
+          id="chat-prompt"
+          type="text"
+          class="chat-prompt"
+          placeholder="Ask a question about this post"
+        />
+        <button id="ask-button" class="ask-button">Ask</button>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>
