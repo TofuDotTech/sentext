@@ -11,7 +11,7 @@ CORS(app)
 
 
 @app.route("/api/emotions", methods=["POST"])
-async def predictEmotion():
+def predictEmotion():
     json = request.json
     if (json == None):
         return {"success": False}
